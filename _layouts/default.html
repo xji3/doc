@@ -79,31 +79,31 @@
 <div class="container">
   <div id="main">
   	<div class="col">
-		<ul class="nav nav-tabs pull-right">
-			{% if page.language == 'cn' %}
-			<li role="presentation"><a href="{{page.url | replace:'_chs.html','.html'}}">English</a></li>
-			<li class='active' role="presentation"><a href="{{page.url}}">中文</a></li>
-			{% else %}
-			<li class='active' role="presentation"><a href="{{page.url}}">English</a></li>
-			<li role="presentation"><a href="{{page.url | replace:'.html','_chs.html'}}">中文</a></li>
-			{% endif %}
-		</ul>
-		<!-- Content Row -->
-		<div class="row">
-			{% assign content_col_size = "col-md-12" %}
-			{% unless page.hide_sidebar %}
-				<!-- Sidebar Column -->
-				<div class="col-md-3" id="tg-sb-sidebar">
-					{% include sidebar.html %}
-				</div>
-				{% assign content_col_size = "col-md-9" %}
-			{% endunless %}
+  		<div class="nav nav-tabs row">
+  			{% if page.language == 'cn' %}
+  			<li role="presentation"><a href="{{page.url | replace:'_chs.html','.html'}}">English</a></li>
+  			<li class='active' role="presentation"><a href="{{page.url}}">中文</a></li>
+  			{% else %}
+  			<li class='active' role="presentation"><a href="{{page.url}}">English</a></li>
+  			<li role="presentation"><a href="{{page.url | replace:'.html','_chs.html'}}">中文</a></li>
+  			{% endif %}
+  		</div>
+  		<!-- Content Row -->
+  		<div class="row">
+  			{% assign content_col_size = "col-md-12" %}
+  			{% unless page.hide_sidebar %}
+  				<!-- Sidebar Column -->
+  				<div class="col-md-3" id="tg-sb-sidebar">
+  					{% include sidebar.html %}
+  				</div>
+  				{% assign content_col_size = "col-md-9" %}
+  			{% endunless %}
 
-			<!-- Content Column -->
-			<div class="{{content_col_size}}" id="tg-sb-content">
-				{{content}}
-			</div>
-		</div>
+  			<!-- Content Column -->
+  			<div class="{{content_col_size}}" id="tg-sb-content">
+  				{{content}}
+  			</div>
+  		</div>
 	</div>
     <!-- /.row -->
 </div>
